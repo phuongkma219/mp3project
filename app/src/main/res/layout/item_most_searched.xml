@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mostSearched"
+            type="com.example.recyclerviewpool.model.itemdata.ItemSong" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_toLeftOf="@id/more"
+            android:layout_marginRight="32dp"
+            android:id="@+id/info_song_search"
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/img_song_search"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_song_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="15dp"
+                app:setText="@{mostSearched.nameSong}" />
+
+            <TextView
+                android:id="@+id/singer_song_search"
+                loadText="@{mostSearched.singerSong}"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorWhite100"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="72dp"
+                android:singleLine="true"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/marginLeftItem"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_more_vert"
+            app:tint="@color/colorWhite100" />
+
+    </RelativeLayout>
+</layout>

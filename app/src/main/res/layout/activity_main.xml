@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+
+    <!--        android:id="@+id/pull_fresh"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+        <RelativeLayout
+            android:id="@+id/activity_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_alignParentBottom="true" />
+
+
+            <com.sothree.slidinguppanel.SlidingUpPanelLayout
+                android:id="@+id/slide_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottom_navigation"
+                android:gravity="bottom"
+                app:umanoPanelHeight="@dimen/playsong_mini"
+                app:umanoShadowHeight="@dimen/shadow_mini"
+                tools:context=".view.MainActivity">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:orientation="vertical">
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="true" />
+
+
+                </RelativeLayout>
+
+
+                <include
+                    android:id="@+id/slide"
+                    layout="@layout/sliding_up_panel"
+                    android:visibility="invisible" />
+
+
+            </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/bottom_sheet"
+            layout="@layout/bottom_sheet"
+            android:visibility="invisible" />
+
+        <!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
